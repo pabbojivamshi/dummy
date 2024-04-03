@@ -18,6 +18,6 @@ jobs:
           aws configure set aws_secret_access_key XVKCPvjZEuxsPqGKGYT2RfNINr2Vr6tZSN7yTu79
           aws configure set default.region eu-north-1
           aws sts get-caller-identity
-          aws ec2 describe-instances
+          aws s3 ls
 
 
