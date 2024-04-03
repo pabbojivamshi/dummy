@@ -14,8 +14,8 @@ jobs:
 
       - name: Set AWS credentials
         run: |
-          aws configure set aws_access_key_id AKIAYS2NR5CB3YXYPPE2
-          aws configure set aws_secret_access_key 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
+          aws configure set aws_access_key_id AKIAYS2NR5CB7XSFXTFE
+          aws configure set aws_secret_access_key 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
           aws configure set default.region eu-north-1
           aws s3 ls
 
