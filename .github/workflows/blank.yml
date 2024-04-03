@@ -18,6 +18,8 @@ jobs:
           aws configure set aws_secret_access_key XVKCPvjZEuxsPqGKGYT2RfNINr2Vr6tZSN7yTu79
           aws configure set default.region eu-north-1
           aws sts get-caller-identity
-          aws s3 ls --region eu-north-1
+      - name: List S3 buckets
+        run: |
+          aws s3 ls
 
 
