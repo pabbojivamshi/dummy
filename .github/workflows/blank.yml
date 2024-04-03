@@ -1,25 +1,24 @@
-name: list s3 buckets
 on:
   push:
     branches:
-      - main 
+      - main
+ 
 jobs:
-  example_job:
+  list-s3-buckets:
+    name: List S3 Buckets
     runs-on: ubuntu-latest
+ 
     steps:
-      - name: Install AWS CLI
-        run: |
-          sudo apt-get update
-          sudo apt-get install awscli -y
-
-      - name: Set AWS credentials
-        run: |
-          aws configure set aws_access_key_id AKIAYS2NR5CB7XSFXTFE
-          aws configure set aws_secret_access_key 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
-          aws configure set default.region eu-north-1
-          aws sts get-caller-identity
+      - name: Checkout code
+        uses: actions/checkout@v2
+ 
+      - name: Set up AWS CLI
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+ 
       - name: List S3 buckets
-        run: |
-          aws s3 ls
-
+        run: aws s3 ls
 
