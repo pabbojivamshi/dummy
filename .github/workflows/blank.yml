@@ -30,6 +30,6 @@ jobs:
         env: 
           USER: ${{ secrets.USERNAME }}
 
-        run: echo "jd $USER"
+        run: echo "jd $env.USER"
 
 
